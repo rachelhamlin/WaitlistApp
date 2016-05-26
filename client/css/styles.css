@@ -86,3 +86,53 @@ button:hover {
   cursor: pointer;
   background-color: #202e6c;
 }
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  color: #2c2341;
+}
+
+td:nth-child(1), td:nth-child(3) {
+  width: 40%;
+}
+
+td:nth-child(2) {
+  width: 5%;
+}
+
+td:nth-child(4) {
+  width: 15%;
+}
+
+td {
+  background-color: rgba(220,220,220,.6);
+}
+
+th {
+  color: #9476DA;
+  font-size: 1rem;
+}
+
+tr {
+  border-bottom: 1px solid #D3D3D3;
+  border-collapse: collapse;
+  height: 50px;
+  font-size: 1.3rem;
+}
+
+
+#remove-party:hover {
+  cursor: pointer;
+  color: #9476DA;
+}
+
+#text-party:hover {
+  cursor: pointer;
+  color: #9476DA;
+}
+
+#space {
+  height: 50px;
+}

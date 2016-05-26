@@ -6,13 +6,13 @@ angular.module('partiesController', ['PartiesAPI'])
 
       $scope.parties = [];
 
-       $scope.saveParty = function(data) {
-         console.log(data);
+       $scope.saveParty = function(party) {
+         console.log(party);
          var newParty = {
            party: {
              name: party.name,
              size: party.size,
-             phoneNumber: party.phonenumber
+             phoneNumber: party.phone
            }
          }
 
@@ -27,12 +27,12 @@ angular.module('partiesController', ['PartiesAPI'])
          })
 
        $scope.remove = function(party){
-         partiesAPI.remove(party._id).then(function(response){
+         console.log(party);
+         partiesAPI.remove(party._id).then(function(){
            partiesAPI.getAll().then(function(response){
              $scope.parties = response.data.parties;
            })
          })
        }
-
 
  }])

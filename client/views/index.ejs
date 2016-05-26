@@ -5,6 +5,7 @@
     <title>Wait List</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js" charset="utf-8"></script>
     <script src='/js/controllers/partiescontroller.js'></script>
@@ -21,7 +22,7 @@
         <div id='form-container'>
           <h3>New Party</h3>
           <br>
-          <form ng-submit='save(party)' name='recipeForm'>
+          <form>
             <span class='form-row'>
             <label>Name:</label>
             <input type='text' name='name' value='' ng-model='party.name'><br>
@@ -32,24 +33,41 @@
             </span>
             <span class='form-row'>
             <label>Phone number:</label>
-            <input type='tel' name='phonenumber' value='' ng-model='party.phonenumber'><br>
+            <input type='tel' name='phonenumber' value='' ng-model='party.phone'><br>
             </span>
             <br>
-            <button >Add</button>
+            <button ng-click='saveParty(party)'>Add</button>
           </form>
         </div>
 
-        <br><br>
+        <br><br><br>
 
         <div id='content-container'>
-          <ol>
-            <h3>Current Queue</h3>
-            <li ng-repeat='party in parties'>
-              {{ party.name }}
-            </li>
-          </ol>
+          <h3>Current Queue</h3>
+          <br>
+          <table>
+            <tr>
+              <th>NAME</th>
+              <th># OF PEOPLE</th>
+              <th>PHONE</th>
+              <th>UPDATE</th>
+            </tr>
+            <tr ng-repeat='party in parties'>
+              <td>{{ party.name }}</td>
+              <td>{{ party.size }}</td>
+              <td>{{ party.phoneNumber }}</td>
+              <td>
+                <span id='remove-party' ng-click='remove(party)'><i class="fa fa-times" aria-hidden="true"></i>&nbsp;</span>
+                <span id='text-party'><i class="fa fa-mobile" aria-hidden="true"></i></span>
+              </td>
+            </tr>
+          </table>
+
+          <div id='space'>&nbsp;</div>
         </div>
+
       </div>
+
       <div class='col-1-4'>
         &nbsp;
       </div>

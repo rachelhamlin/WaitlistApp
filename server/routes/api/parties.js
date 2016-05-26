@@ -13,7 +13,7 @@ router.get('/', function(req,res){
 // Show one party
 router.get('/:id', function(req,res){
   Party.findById(req.params.id, function(err, dbParties){
-    res.json( partyIdea )
+    res.json( dbParty )
   });
 })
 
@@ -26,10 +26,13 @@ router.post('/', function(req,res){
 })
 
 // Delete party
-router.delete('/:id', function(req,res){
+router.delete('/:id', function(req,res,next){
   Party.findByIdAndRemove(req.params.id, function(err){
-    if (err) { res.status(500).end(); }
+    if (err) {
+      next(err);
+    } else {
     res.status(204).end();
+    }
   });
 });
 
