@@ -1,3 +1,3 @@
 console.log('Front-end is up');
 
-angular.module('Parties', ['partyController']);
+angular.module('WaitList', ['partiesController']);

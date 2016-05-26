@@ -1,7 +1,13 @@
-body {
+* {
   padding: 0;
   margin: 0;
-  font-family: arial;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-image: url('/media/background.jpg');
+  background-size: 1646px 1646px;
 }
 
 .grid:after {
@@ -10,7 +16,7 @@ body {
   clear: both;
 }
 
-/*I'm not using gutters, but if I were:
+/* Not using gutters on my grid, but if there were:
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -25,10 +31,14 @@ body {
   padding-right: 0;
 }
 
+.col-1-4 {
+  width: 25%;
+}
+
 .col-1-2 {
   width: 50%;
   height: 100vh;
-  background-color: #FFFFFF;
+  background-color: rgba(255,255,255,.8);
   text-align: center;
 }
 
@@ -37,6 +47,41 @@ body {
   width: 300px;
 }
 
-.col-1-4 {
-  width: 25%;
+form {
+  text-align: left;
+  margin-left: 25%;
+}
+
+.form-row {
+  display: block;
+  margin-top: 5px;
+}
+
+label {
+  float: left;
+  width: 160px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+input {
+  border: 1px solid gray;
+  height: 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  width: 65%;
+  height: 40px;
+  border-radius: 5px;
+  display: block;
+  font-size: 1rem;
+  color: #FFFFFF;
+  background-color: #17214E;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #202e6c;
 }

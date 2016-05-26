@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='WaitList'>
   <head>
     <meta charset="utf-8">
     <title>Wait List</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js" charset="utf-8"></script>
-    <script src="/js/scripts.js" charset="utf-8"></script>
+    <script src='/js/controllers/partiescontroller.js'></script>
+    <script src='/js/services/partiesAPI.js'></script>
+    <script src="/js/app.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body ng-controller='partiesController'>
     <div class='grid'>
       <div class='col-1-4'>
         &nbsp;
@@ -16,13 +19,35 @@
       <div class='col-1-2'>
         <img id='logo' src='/media/logo.png'>
         <div id='form-container'>
-          Add a new party to the waitlist:
+          <h3>New Party</h3>
+          <br>
           <form name='recipeForm'>
-            <input type='text' name='name' value='' ng-model='recipe.name' placeholder='Name'>
-            <button ng-click='createRecipe(recipe)'>Add</button>
+            <span class='form-row'>
+            <label>Name:</label>
+            <input type='text' name='name' value='' ng-model='party.name'><br>
+            </span>
+            <span class='form-row'>
+            <label>Number of people:</label>
+            <input type='number' name='size' value='' ng-model='party.size' min='1' max='5' style='padding-left: 5px;'><br>
+            </span>
+            <span class='form-row'>
+            <label>Phone number:</label>
+            <input type='tel' name='phonenumber' value='' ng-model='party.phonenumber'><br>
+            </span>
+            <br>
+            <button ng-click='saveParty(party)'>Add</button>
           </form>
         </div>
+
+        <br><br>
+
         <div id='content-container'>
+          <ol>
+            <h3>Current Queue</h3>
+            <li ng-repeat='party in parties'>
+              {{ party.name }}
+            </li>
+          </ol>
         </div>
       </div>
       <div class='col-1-4'>
