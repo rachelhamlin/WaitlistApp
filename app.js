@@ -10,8 +10,7 @@ var app = express();
 
 app.use(morgan('dev'));
 app.set('view engine', 'ejs');
-
-app.set('views', path.join(__dirname, 'client/public/views'));
+app.set('views', __dirname + '/client/views')
 
 
 var db = process.env.MONGODB_URI || 'mongodb://localhost/waitlist_app';
@@ -20,7 +19,7 @@ mongoose.connect(db);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(express.static('client/public'));
+app.use(express.static('./client'));
 
 // Routing
 var indexRouter = require('./server/routes/index.js');

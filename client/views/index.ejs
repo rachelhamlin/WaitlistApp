@@ -21,21 +21,21 @@
         <div id='form-container'>
           <h3>New Party</h3>
           <br>
-          <form name='recipeForm'>
+          <form ng-submit='save(party)' name='recipeForm'>
             <span class='form-row'>
             <label>Name:</label>
             <input type='text' name='name' value='' ng-model='party.name'><br>
             </span>
             <span class='form-row'>
             <label>Number of people:</label>
-            <input type='number' name='size' value='' ng-model='party.size' min='1' max='5' style='padding-left: 5px;'><br>
+            <input type='number' name='size' value='' ng-model='party.size' min='1' max='5'><br>
             </span>
             <span class='form-row'>
             <label>Phone number:</label>
             <input type='tel' name='phonenumber' value='' ng-model='party.phonenumber'><br>
             </span>
             <br>
-            <button ng-click='saveParty(party)'>Add</button>
+            <button >Add</button>
           </form>
         </div>
 

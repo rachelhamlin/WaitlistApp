@@ -1,4 +1,4 @@
-svar express = require('express');
+var express = require('express');
 var router  = express.Router();
 
 var Party = require('../../models/party');
@@ -14,13 +14,13 @@ router.get('/', function(req,res){
 router.get('/:id', function(req,res){
   Party.findById(req.params.id, function(err, dbParties){
     res.json( partyIdea )
-  };
+  });
 })
-
 
 // Add party
 router.post('/', function(req,res){
   Party.create(req.body.party, function(err,party){
+
     res.json(party);
   })
 })
