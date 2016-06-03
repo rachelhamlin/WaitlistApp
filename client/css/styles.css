@@ -59,6 +59,7 @@ form {
 
 label {
   float: left;
+  padding-top: 5px;
   width: 160px;
   margin-right: 10px;
   text-align: right;
@@ -66,10 +67,15 @@ label {
 
 input {
   border: 1px solid gray;
-  height: 25px;
+  height: 30px;
   border-radius: 5px;
   font-size: 1rem;
   padding-left: 5px;
+}
+
+input:focus, input:hover {
+  outline: none;
+  background-color: #F0F8FF;
 }
 
 button {
@@ -134,5 +140,5 @@ tr {
 }
 
 #space {
-  height: 50px;
+  height: 70px;
 }

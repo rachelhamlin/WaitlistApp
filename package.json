@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-ui-mask": "^1.8.4",
     "body-parser": "^1.15.1",
     "dotenv": "^2.0.0",
     "ejs": "^2.4.2",
